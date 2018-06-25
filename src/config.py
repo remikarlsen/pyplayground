@@ -18,14 +18,12 @@ class AppConfig:
     def config(name):
         return AppConfig.__conf[name]
 
-
     @staticmethod
     def set(name, value):
         if name in AppConfig.__setters:
             AppConfig.__conf[name] = value
         else:
             raise NameError("Name not accepted in set() method")
-
 
     @staticmethod
     def load_credentials(file):
@@ -35,7 +33,6 @@ class AppConfig:
         except Exception as e:
             print(e)
         print(AppConfig.__cred)
-
 
     @staticmethod
     def load_app_settings(file):
